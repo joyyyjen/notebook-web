@@ -1,0 +1,5 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+publishDir = "docs"
+title = "J.Notebook 1.0"
+theme = "hugo-paper"
