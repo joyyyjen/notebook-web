@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b265235b-373f-43eb-b7fb-fc6d3ab4dde5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/themes/hugo-paper" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hugo-paper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-paper-old" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +23,7 @@
         <counts>
           <entry key="css" value="3" />
           <entry key="gitignore" value="1" />
-          <entry key="gitmodules" value="2" />
+          <entry key="gitmodules" value="3" />
           <entry key="html" value="12" />
           <entry key="ico" value="1" />
           <entry key="js" value="1" />
@@ -40,7 +41,7 @@
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="8" />
-          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="PLAIN_TEXT" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -64,11 +65,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.toml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="15">
+              <caret line="1" column="8" lean-forward="true" selection-start-column="30" selection-end-line="1" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -83,13 +84,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="47" selection-start-column="47" selection-end-column="47" />
+              <caret column="14" selection-start-column="14" selection-end-column="14" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitmodules">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -113,7 +119,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="391" />
+    <option name="x" value="126" />
     <option name="y" value="23" />
     <option name="width" value="1150" />
     <option name="height" value="708" />
@@ -141,6 +147,12 @@
               <item name="notebook-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="notebook-web" type="462c0819:PsiDirectoryNode" />
               <item name="themes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="notebook-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="notebook-web" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="hugo-paper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -192,15 +204,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="561" y="23" width="1150" height="708" extended-state="0" />
-    <editor active="true" />
+    <frame x="126" y="23" width="1150" height="708" extended-state="0" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24534987" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24534987" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" weight="0.32841328" />
-      <window_info anchor="bottom" id="Terminal" sideWeight="0.6846767" visible="true" weight="0.4512987" />
+      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.6846767" visible="true" weight="0.4512987" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.3153233" side_tool="true" visible="true" weight="0.4512987" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -229,6 +240,7 @@
       <path value="$PROJECT_DIR$/hugo-paper" />
       <path value="$PROJECT_DIR$/themes/hugo-paper-old" />
       <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/themes/hugo-paper-2" />
     </ignored-roots>
     <MESSAGE value="publish web" />
     <option name="LAST_COMMIT_MESSAGE" value="publish web" />
@@ -389,16 +401,6 @@
     <entry file="file://$PROJECT_DIR$/themes/hugo-paper-old/layouts/404.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.toml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitmodules">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/archetypes/default.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -410,7 +412,17 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="47" selection-start-column="47" selection-end-column="47" />
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitmodules">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="8" lean-forward="true" selection-start-column="30" selection-end-line="1" selection-end-column="8" />
         </state>
       </provider>
     </entry>
