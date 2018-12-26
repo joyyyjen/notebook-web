@@ -1,5 +1,6 @@
 baseURL = "https://joyyyjen.github.io/notebook-web/"
 languageCode = "en-us"
+themesDir = "themes"
 publishDir = "docs"
 title = "J.Notebook 1.0"
 theme = "hugo-paper"
