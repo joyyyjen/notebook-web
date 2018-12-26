@@ -4,3 +4,8 @@ themesDir = "themes"
 publishDir = "docs"
 title = "J.Notebook 1.0"
 theme = "hugo-paper"
+
+[blackfriday]
+  smartypants = false
+  extensions = ["tables", "hardLineBreak"]
+  smartDashes = false
