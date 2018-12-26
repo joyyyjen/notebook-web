@@ -17,7 +17,9 @@
       <pubDate>Wed, 26 Dec 2018 19:33:37 +0800</pubDate>
       
       <guid>https://joyyyjen.github.io/notebook-web/posts/start-of-2019/</guid>
-      <description>Welcome to my notebook with some of my study in progress. Three tasks in 2019: Exercise Regularly, Read Regularly, Heading to Graduate. Recent courses include, phonetics, corpus linguistics, text information systems, and etc.</description>
+      <description>Welcome to my notebook with some of my study in progress. Three tasks in 2019:
+Exercise Regularly, Read Regularly, Heading to Graduate.
+Recent courses include, phonetics, corpus linguistics, text information systems, and etc.</description>
     </item>
     
     <item>
@@ -26,9 +28,7 @@
       <pubDate>Wed, 26 Dec 2018 11:33:37 +0800</pubDate>
       
       <guid>https://joyyyjen.github.io/notebook-web/posts/note-1/</guid>
-      <description>Web Search | Challenges | Application| |&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;| |scalability | parallel indexing &amp;amp; searching (MapReduce)| |low quality information and spams | Spam detection &amp;amp; Robust ranking| dynamics of the web | &amp;ndash;| |Opportunities| many additional heuristics 啟發 can be leveraged 槓桿原理 to improve search accuracy| |rich link information, layout, etc | link analysis &amp;amp; multi-feature ranking|
-Web -&amp;gt; Crawler -&amp;gt; Indexer &amp;lt;-&amp;gt; Retriever &amp;lt;-&amp;gt; Browser &amp;lt;- User
-Major Crawling Strategies:  Breadth-First Parallel Crawing Variation: focused crawling Targeting at a subset of pages Typically given a query Incremental / Repeated Crawling need to minimuizer resource overhead can learn from the past experience (updated daily vs.</description>
+      <description>Web Search    Challenges Application     scalability parallel indexing &amp;amp; searching (MapReduce)   low quality information and spams Spam detection &amp;amp; Robust ranking   dynamics of the web --   Opportunities many additional heuristics 啟發 can be leveraged 槓桿原理 to improve search accuracy   rich link information, layout, etc link analysis &amp;amp; multi-feature ranking    Web &amp;rightarrow; Crawler &amp;rightarrow; Indexer &amp;lt;-&amp;gt; Retriever &amp;lt;-&amp;gt; Browser &amp;leftarrow; User</description>
     </item>
     
   </channel>
