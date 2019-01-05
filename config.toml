@@ -7,5 +7,5 @@ theme = "hugo-paper"
 
 [blackfriday]
   smartypants = false
-  extensions = ["tables", "hardLineBreak"]
+  extensions = ["tables", "hardLineBreak", "fencedCode"]
   smartDashes = false
