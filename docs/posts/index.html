@@ -73,16 +73,48 @@ Recent courses include, phonetics, corpus linguistics, text information systems,
   </header>
   <p class="post-summary">Web Search    Challenges Application     scalability parallel indexing &amp; searching (MapReduce)   low quality information and spams Spam detection &amp; Robust ranking   dynamics of the web --   Opportunities many additional heuristics 啟發 can be leveraged 槓桿原理 to improve search accuracy   rich link information, layout, etc link analysis &amp; multi-feature ranking    Web → Crawler → Indexer &lt;-&gt; Retriever &lt;-&gt; Browser ← User...</p>
   <footer class="post-footer">
-    <p class="post-meta">2018.12.26</p>
+    <p class="post-meta">2018.12.27</p>
   </footer>
   <a class="post-link" href="https://joyyyjen.github.io/notebook-web/posts/note-1/"></a>
 </article>
 
 
 
+
+<article class="post post-entry">
+  <header class="post-header">
+    
+    <h2 class="post-title">adapting-acoustics-models-steps</h2>
+  </header>
+  <p class="post-summary">1. Generating acoustic feature files sphinx_fe -argfile ../TrainingSet/acoustic-model/feat.params \ -samprate 16000 -c ted.fileids \ -di . -do . -ei wav -eo mfc -mswav yes   audio file format must be mono 16k
+can use the following commend to change the format
+  ffmpeg -i &#34;$filename&#34; -ar 16000 ./Test1/&#34;$filename&#34;  2. Accumulating observation counts ../TrainingSet/bw \ -hmmdir ../TrainingSet/acoustic-model\ -moddeffn ../TrainingSet/acoustic-model/mdef.txt\ -ts2cbfn .ptm. \ -feat 1s_c_d_dd \ -svspec 0-12/13-25/26-38 \ -cmn current \ -agc none \ -dictfn ....</p>
+  <footer class="post-footer">
+    <p class="post-meta">2019.1.5</p>
+  </footer>
+  <a class="post-link" href="https://joyyyjen.github.io/notebook-web/posts/adapting-acoustics-models-steps/"></a>
+</article>
+
+
+
+
+<article class="post post-entry">
+  <header class="post-header">
+    
+    <h2 class="post-title">Note 2</h2>
+  </header>
+  <p class="post-summary">Practice Makes Perfect...</p>
+  <footer class="post-footer">
+    <p class="post-meta">2019.1.5</p>
+  </footer>
+  <a class="post-link" href="https://joyyyjen.github.io/notebook-web/posts/note-2/"></a>
+</article>
+
+
+
 </main>
 <footer class="footer">
-  <span>&copy; 2018 J.Notebook 1.0</span>
+  <span>&copy; 2019 J.Notebook 1.0</span>
   <span>&middot;</span>
   <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
   <span>&middot;</span>

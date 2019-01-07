@@ -6,10 +6,39 @@
     <description>Recent content in Posts on J.Notebook 1.0</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Dec 2018 19:33:37 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 05 Jan 2019 20:05:17 +0800</lastBuildDate>
     
 	<atom:link href="https://joyyyjen.github.io/notebook-web/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Note 2</title>
+      <link>https://joyyyjen.github.io/notebook-web/posts/note-2/</link>
+      <pubDate>Sat, 05 Jan 2019 20:05:17 +0800</pubDate>
+      
+      <guid>https://joyyyjen.github.io/notebook-web/posts/note-2/</guid>
+      <description>Practice Makes Perfect</description>
+    </item>
+    
+    <item>
+      <title>adapting-acoustics-models-steps</title>
+      <link>https://joyyyjen.github.io/notebook-web/posts/adapting-acoustics-models-steps/</link>
+      <pubDate>Sat, 05 Jan 2019 19:28:37 +0800</pubDate>
+      
+      <guid>https://joyyyjen.github.io/notebook-web/posts/adapting-acoustics-models-steps/</guid>
+      <description>1. Generating acoustic feature files sphinx_fe -argfile ../TrainingSet/acoustic-model/feat.params \ -samprate 16000 -c ted.fileids \ -di . -do . -ei wav -eo mfc -mswav yes   audio file format must be mono 16k
+can use the following commend to change the format
+  ffmpeg -i &amp;quot;$filename&amp;quot; -ar 16000 ./Test1/&amp;quot;$filename&amp;quot;  2. Accumulating observation counts ../TrainingSet/bw \ -hmmdir ../TrainingSet/acoustic-model\ -moddeffn ../TrainingSet/acoustic-model/mdef.txt\ -ts2cbfn .ptm. \ -feat 1s_c_d_dd \ -svspec 0-12/13-25/26-38 \ -cmn current \ -agc none \ -dictfn .</description>
+    </item>
+    
+    <item>
+      <title>Web Search</title>
+      <link>https://joyyyjen.github.io/notebook-web/posts/note-1/</link>
+      <pubDate>Thu, 27 Dec 2018 11:33:37 +0800</pubDate>
+      
+      <guid>https://joyyyjen.github.io/notebook-web/posts/note-1/</guid>
+      <description>Web Search    Challenges Application     scalability parallel indexing &amp;amp; searching (MapReduce)   low quality information and spams Spam detection &amp;amp; Robust ranking   dynamics of the web --   Opportunities many additional heuristics 啟發 can be leveraged 槓桿原理 to improve search accuracy   rich link information, layout, etc link analysis &amp;amp; multi-feature ranking    Web &amp;rightarrow; Crawler &amp;rightarrow; Indexer &amp;lt;-&amp;gt; Retriever &amp;lt;-&amp;gt; Browser &amp;leftarrow; User</description>
+    </item>
     
     <item>
       <title>Start of 2019</title>
@@ -20,15 +49,6 @@
       <description>Welcome to my notebook with some of my study in progress. Three tasks in 2019:
 Exercise Regularly, Read Regularly, Heading to Graduate.
 Recent courses include, phonetics, corpus linguistics, text information systems, and etc.</description>
-    </item>
-    
-    <item>
-      <title>Web Search</title>
-      <link>https://joyyyjen.github.io/notebook-web/posts/note-1/</link>
-      <pubDate>Wed, 26 Dec 2018 11:33:37 +0800</pubDate>
-      
-      <guid>https://joyyyjen.github.io/notebook-web/posts/note-1/</guid>
-      <description>Web Search    Challenges Application     scalability parallel indexing &amp;amp; searching (MapReduce)   low quality information and spams Spam detection &amp;amp; Robust ranking   dynamics of the web --   Opportunities many additional heuristics 啟發 can be leveraged 槓桿原理 to improve search accuracy   rich link information, layout, etc link analysis &amp;amp; multi-feature ranking    Web &amp;rightarrow; Crawler &amp;rightarrow; Indexer &amp;lt;-&amp;gt; Retriever &amp;lt;-&amp;gt; Browser &amp;leftarrow; User</description>
     </item>
     
   </channel>
