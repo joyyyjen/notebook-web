@@ -8,8 +8,9 @@
   <title>adapting-acoustics-models-steps - J.Notebook 1.0</title>
   
   <meta name="description" content="1. Generating acoustic feature files sphinx_fe -argfile ../TrainingSet/acoustic-model/feat.params \ -samprate 16000 -c ted.fileids \ -di . -do . -ei wav -eo mfc -mswav yes   audio file format must be mono 16k
-can use the following commend to change the format
-  ffmpeg -i &quot;$filename&quot; -ar 16000 ./Test1/&quot;$filename&quot;  2. Accumulating observation counts ../TrainingSet/bw \ -hmmdir ../TrainingSet/acoustic-model\ -moddeffn ../TrainingSet/acoustic-model/mdef.txt\ -ts2cbfn .ptm. \ -feat 1s_c_d_dd \ -svspec 0-12/13-25/26-38 \ -cmn current \ -agc none \ -dictfn .">
+can use the following bash commend to change the format
+  for filename in *.wav; do ffmpeg -i &quot;$filename&quot; -ac 1 -ar 16000 ./Test1/&quot;$filename&quot;; done  Reference Screenshot:
+2. Accumulating observation counts ../TrainingSet/bw \ -hmmdir .">
   <meta name="author" content="">
   
   <link href="https://joyyyjen.github.io/notebook-web/css/font.css" rel="stylesheet">
@@ -55,13 +56,17 @@ can use the following commend to change the format
 
 <ul>
 <li>audio file format must be mono 16k<br />
-can use the following commend to change the format<br />
+can use the following bash commend to change the format<br />
 <br />
 <br /></li>
 </ul>
 
-<pre><code class="language-md">ffmpeg -i &quot;$filename&quot; -ar 16000 ./Test1/&quot;$filename&quot;
+<pre><code class="language-md">for filename in *.wav; do 
+ffmpeg -i &quot;$filename&quot; -ac 1 -ar 16000 ./Test1/&quot;$filename&quot;; done
 </code></pre>
+
+<p>Reference Screenshot:<br />
+<img src="(https://github.com/joyyyjen/notebook-web/blob/master/docs/img/acoustics-feature.png," alt="alt text" title="Acoustic-feature Text&quot;" /></p>
 
 <h3 id="2-accumulating-observation-counts">2. Accumulating observation counts</h3>
 
@@ -78,6 +83,9 @@ can use the following commend to change the format<br />
  -lsnfn tag-ted.transcription \
  -accumdir .
 </code></pre>
+
+<p>Reference Screenshot:<br />
+<img src="(https://github.com/joyyyjen/notebook-web/blob/master/docs/img/bw.png," alt="alt text" title="bw Text&quot;" /></p>
 
 <h3 id="3-updating-the-acoustic-model-files-with-map">3. Updating the acoustic model files with MAP</h3>
 
@@ -96,6 +104,9 @@ can use the following commend to change the format<br />
     -mapmixwfn en-us-adapt/mixture_weights \
     -maptmatfn en-us-adapt/transition_matrices
 </code></pre>
+
+<p>Reference Screenshot:<br />
+<img src="(https://github.com/joyyyjen/notebook-web/blob/master/docs/img/map-adapt.png," alt="alt text" title="Map-adapt Text&quot;" /></p>
 
 <p>reference: <a href="https://cmusphinx.github.io/wiki/tutorialadapt/">https://cmusphinx.github.io/wiki/tutorialadapt/</a></p>
 </div>

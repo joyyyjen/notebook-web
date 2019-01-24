@@ -27,8 +27,9 @@
       
       <guid>https://joyyyjen.github.io/notebook-web/posts/adapting-acoustics-models-steps/</guid>
       <description>1. Generating acoustic feature files sphinx_fe -argfile ../TrainingSet/acoustic-model/feat.params \ -samprate 16000 -c ted.fileids \ -di . -do . -ei wav -eo mfc -mswav yes   audio file format must be mono 16k
-can use the following commend to change the format
-  ffmpeg -i &amp;quot;$filename&amp;quot; -ar 16000 ./Test1/&amp;quot;$filename&amp;quot;  2. Accumulating observation counts ../TrainingSet/bw \ -hmmdir ../TrainingSet/acoustic-model\ -moddeffn ../TrainingSet/acoustic-model/mdef.txt\ -ts2cbfn .ptm. \ -feat 1s_c_d_dd \ -svspec 0-12/13-25/26-38 \ -cmn current \ -agc none \ -dictfn .</description>
+can use the following bash commend to change the format
+  for filename in *.wav; do ffmpeg -i &amp;quot;$filename&amp;quot; -ac 1 -ar 16000 ./Test1/&amp;quot;$filename&amp;quot;; done  Reference Screenshot:
+2. Accumulating observation counts ../TrainingSet/bw \ -hmmdir .</description>
     </item>
     
     <item>

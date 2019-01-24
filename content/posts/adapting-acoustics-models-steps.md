@@ -13,12 +13,16 @@ sphinx_fe -argfile ../TrainingSet/acoustic-model/feat.params \
 ```
 
 - audio file format must be mono 16k
-can use the following commend to change the format
+can use the following bash commend to change the format
 
 
 ```md
-ffmpeg -i "$filename" -ar 16000 ./Test1/"$filename"
+for filename in *.wav; do 
+ffmpeg -i "$filename" -ac 1 -ar 16000 ./Test1/"$filename"; done
 ```
+Reference Screenshot:
+![alt text][img1]
+[img1]:(https://github.com/joyyyjen/notebook-web/blob/master/docs/img/acoustics-feature.png, "Acoustic-feature Text")
 
 
 ### 2. Accumulating observation counts
@@ -36,6 +40,10 @@ ffmpeg -i "$filename" -ar 16000 ./Test1/"$filename"
  -lsnfn tag-ted.transcription \
  -accumdir .
 ```
+ Reference Screenshot:
+![alt text][img2]
+[img2]:(https://github.com/joyyyjen/notebook-web/blob/master/docs/img/bw.png, "bw Text")
+ 
  
 ### 3. Updating the acoustic model files with MAP
 ```md
@@ -54,5 +62,8 @@ cp -a ../TrainingSet/acoustic-model en-us-adapt
     -mapmixwfn en-us-adapt/mixture_weights \
     -maptmatfn en-us-adapt/transition_matrices
 ```
+Reference Screenshot:
+![alt text][img3]
+[img3]:(https://github.com/joyyyjen/notebook-web/blob/master/docs/img/map-adapt.png, "Map-adapt Text")
 
 reference: https://cmusphinx.github.io/wiki/tutorialadapt/
