@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b265235b-373f-43eb-b7fb-fc6d3ab4dde5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/img/acoustics-feature.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/bw.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/map-adapt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b265235b-373f-43eb-b7fb-fc6d3ab4dde5" name="Default Changelist" comment="publish web">
       <change beforePath="$PROJECT_DIR$/content/posts/adapting-acoustics-models-steps.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/adapting-acoustics-models-steps.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/hugo-paper" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hugo-paper" afterDir="false" />
     </list>
@@ -59,7 +55,7 @@
           <entry key="gitignore" value="2" />
           <entry key="gitmodules" value="14" />
           <entry key="html" value="21" />
-          <entry key="md" value="1468" />
+          <entry key="md" value="1474" />
           <entry key="toml" value="258" />
           <entry key="txt" value="35" />
         </counts>
@@ -67,7 +63,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="21" />
-          <entry key="Markdown" value="1468" />
+          <entry key="Markdown" value="1474" />
           <entry key="PLAIN_TEXT" value="309" />
         </counts>
       </usages-collector>
@@ -121,8 +117,8 @@
         <entry file="file://$PROJECT_DIR$/content/posts/adapting-acoustics-models-steps.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="263">
-                <caret line="66" column="100" selection-start-line="66" selection-start-column="100" selection-end-line="66" selection-end-column="100" />
+              <first_editor relative-caret-position="247">
+                <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
               </first_editor>
               <second_editor />
             </state>
@@ -494,8 +490,8 @@
     <entry file="file://$PROJECT_DIR$/content/posts/adapting-acoustics-models-steps.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="263">
-            <caret line="66" column="100" selection-start-line="66" selection-start-column="100" selection-end-line="66" selection-end-column="100" />
+          <first_editor relative-caret-position="247">
+            <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
           </first_editor>
           <second_editor />
         </state>

@@ -22,7 +22,7 @@ ffmpeg -i "$filename" -ac 1 -ar 16000 ./Test1/"$filename"; done
 ```
 Reference Screenshot:
 ![alt text][img1]
-[img1]:(https://github.com/joyyyjen/notebook-web/blob/master/docs/img/acoustics-feature.png, "Acoustic-feature Text")
+[img1]: https://github.com/joyyyjen/notebook-web/blob/master/docs/img/acoustics-feature.png "Acoustic-feature Text"
 
 
 ### 2. Accumulating observation counts
@@ -42,7 +42,7 @@ Reference Screenshot:
 ```
  Reference Screenshot:
 ![alt text][img2]
-[img2]:(https://github.com/joyyyjen/notebook-web/blob/master/docs/img/bw.png, "bw Text")
+[img2]: https://github.com/joyyyjen/notebook-web/blob/master/docs/img/bw.png "bw Text"
  
  
 ### 3. Updating the acoustic model files with MAP
@@ -64,6 +64,6 @@ cp -a ../TrainingSet/acoustic-model en-us-adapt
 ```
 Reference Screenshot:
 ![alt text][img3]
-[img3]:(https://github.com/joyyyjen/notebook-web/blob/master/docs/img/map-adapt.png, "Map-adapt Text")
+[img3]: https://github.com/joyyyjen/notebook-web/blob/master/docs/img/map-adapt.png "Map-adapt Text"
 
 reference: https://cmusphinx.github.io/wiki/tutorialadapt/
