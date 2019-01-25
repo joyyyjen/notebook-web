@@ -22,7 +22,7 @@ ffmpeg -i "$filename" -ac 1 -ar 16000 ./Test1/"$filename"; done
 ```
 Reference Screenshot:
 ![alt text][img1]
-[img1]: https://github.com/joyyyjen/notebook-web/blob/master/docs/img/acoustics-feature.png "Acoustic-feature Text"
+[img1]: https://raw.githubusercontent.com/joyyyjen/notebook-web/master/docs/img/acoustics-feature.png "Acoustic-feature Text"
 
 
 ### 2. Accumulating observation counts
@@ -42,9 +42,13 @@ Reference Screenshot:
 ```
  Reference Screenshot:
 ![alt text][img2]
-[img2]: https://github.com/joyyyjen/notebook-web/blob/master/docs/img/bw.png "bw Text"
+[img2]: https://raw.githubusercontent.com/joyyyjen/notebook-web/master/docs/img/bw.png "bw Text"
  
- 
+- If a word is not in the dictionary model, it will not be able to produce phonetic utterance; therefore, skip the utterance
+
+![alt text][img3]
+[img3]: https://raw.githubusercontent.com/joyyyjen/notebook-web/master/docs/img/counting.png "accumulating count"
+
 ### 3. Updating the acoustic model files with MAP
 ```md
 cp -a ../TrainingSet/acoustic-model en-us-adapt 
@@ -63,7 +67,7 @@ cp -a ../TrainingSet/acoustic-model en-us-adapt
     -maptmatfn en-us-adapt/transition_matrices
 ```
 Reference Screenshot:
-![alt text][img3]
-[img3]: https://github.com/joyyyjen/notebook-web/blob/master/docs/img/map-adapt.png "Map-adapt Text"
+![alt text][img4]
+[img4]: https://raw.githubusercontent.com/joyyyjen/notebook-web/master/docs/img/map-adopt.png "map-adapt text"
 
 reference: https://cmusphinx.github.io/wiki/tutorialadapt/
