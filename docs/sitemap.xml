@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://joyyyjen.github.io/notebook-web/posts/using-g2p-seq2seq-to-extend-the-dictionary/</loc>
+    <lastmod>2019-02-10T14:02:40-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://joyyyjen.github.io/notebook-web/posts/transcription-text-preprocessing/</loc>
+    <lastmod>2019-01-26T16:29:38-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://joyyyjen.github.io/notebook-web/posts/note-2/</loc>
     <lastmod>2019-01-05T20:05:17+08:00</lastmod>
   </url>
@@ -29,13 +39,13 @@
   
   <url>
     <loc>https://joyyyjen.github.io/notebook-web/</loc>
-    <lastmod>2019-01-05T20:05:17+08:00</lastmod>
+    <lastmod>2019-02-10T14:02:40-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://joyyyjen.github.io/notebook-web/posts/</loc>
-    <lastmod>2019-01-05T20:05:17+08:00</lastmod>
+    <lastmod>2019-02-10T14:02:40-06:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>Using G2p Seq2seq to Extend the Dictionary - J.Notebook 1.0</title>
+  
+  <meta name="description" content="Introduction When we are adapting-acoustics-models, there are some utterances that fail to produce phonetic transcription.
+Those are words not in your model dictionary.
+Therefore, we would like to extend our dictionary.
+Using g2p-seq2seq to extend the dictionary To keep the consistency, we use CMUSphinx recommend g2p-seq2seq.
+Installation git clone the module from the following link:
+https://github.com/cmusphinx/g2p-seq2seq
+ sudo python setup.py install python setup.py test   Remember to update or install python setuptools.">
+  <meta name="author" content="">
+  
+  <link href="https://joyyyjen.github.io/notebook-web/css/font.css" rel="stylesheet">
+  <link href="https://joyyyjen.github.io/notebook-web/css/atom-one-dark.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+  <link href="https://joyyyjen.github.io/notebook-web/css/style.css" rel="stylesheet">
+  
+  <link rel="icon" href="https://joyyyjen.github.io/notebook-web/img/dp.png">
+  
+  <meta name="generator" content="Hugo 0.53" />
+  
+  <link rel="alternate" type="application/atom+xml" href="https://joyyyjen.github.io/notebook-web/index.xml" title="J.Notebook 1.0">
+  
+</head>
+<body class="single">
+  <header class="header">
+    
+    <p class="title"><a href="https://joyyyjen.github.io/notebook-web/">J.Notebook 1.0</a></p>
+    
+    <button class="menu-toggle" type="button"></button>
+    <nav class="menu">
+      <ul>
+        
+        
+      </ul>
+    </nav>
+  </header>
+  <main class="main">
+
+<article class="post post-view">
+  <header class="post-header">
+    <h1 class="post-title">Using G2p Seq2seq to Extend the Dictionary</h1>
+    <p class="post-meta">2019.2.10</p>
+  </header>
+  <div class="post-content">
+
+<h2 id="introduction">Introduction</h2>
+
+<p>When we are adapting-acoustics-models, there are some utterances that fail to produce phonetic transcription.<br />
+Those are words not in your model dictionary.<br />
+Therefore, we would like to extend our dictionary.</p>
+
+<h2 id="using-g2p-seq2seq-to-extend-the-dictionary">Using g2p-seq2seq to extend the dictionary</h2>
+
+<p>To keep the consistency, we use CMUSphinx recommend g2p-seq2seq.</p>
+
+<h3 id="installation">Installation</h3>
+
+<p>git clone the module from the following link:<br />
+<a href="https://github.com/cmusphinx/g2p-seq2seq">https://github.com/cmusphinx/g2p-seq2seq</a></p>
+
+<pre><code> sudo python setup.py install  
+ python setup.py test
+</code></pre>
+
+<ul>
+<li>Remember to update or install python setuptools.<br />
+<br /></li>
+</ul>
+
+<p>G2P is running on Tensorflow, the version need to be:</p>
+
+<ul>
+<li>tensor2tensor==1.6.6 (require downgrade)<br /></li>
+<li>g2p-seq2seq==6.2.2a0<br /></li>
+<li>tensorflow==1.13.0rc1 (at least)<br />
+<br /></li>
+</ul>
+
+<h3 id="running-g2p">Running G2P</h3>
+
+<p>We are using an English model 2-layer LSTM with 512 hidden units provided by CMUSphinx website.<br />
+G2P has an interactive mode:</p>
+
+<pre><code>$ g2p-seq2seq --interactive --model_dir ./g2p-seq2seq-model-6.2-cmudict-nostress
+...
+&gt; hello
+...
+Pronunciations: [HH EH L OW]
+...
+&gt;
+
+</code></pre>
+
+<p>To generate pronunciations for an English word list with a trained model, run:</p>
+
+<pre><code>  g2p-seq2seq --decode wordlist.txt --model_dir ./g2p-seq2seq-model-6.2-cmudict-nostress &gt; output_dict.txt
+</code></pre>
+
+<h3 id="processing-output-dictionary">Processing Output dictionary</h3>
+
+<p>G2P will output the pronunciations along with a blank sentence.<br />
+In order to remove the blank sentences, run this in Terminal:</p>
+
+<pre><code> sed -i &quot;&quot; '/^$/d' output_dict.txt
+</code></pre>
+
+<p>reference: <a href="https://cmusphinx.github.io/wiki/tutorialdict/#using-g2p-seq2seq-to-extend-the-dictionary">https://cmusphinx.github.io/wiki/tutorialdict/#using-g2p-seq2seq-to-extend-the-dictionary</a></p>
+
+<h3 id="training-error-identified">Training Error Identified</h3>
+
+<p>When I was training Astrom Audio, the following word are not in dictionary:</p>
+
+<blockquote>
+<ul>
+<li>'week-long' 0<br /></li>
+<li>'an-and' 2<br /></li>
+<li>'multi-disciplinary' 3<br /></li>
+<li>'valkenburg' 4<br /></li>
+<li>'ehht' 5<br /></li>
+<li>'creatives'' 6<br /></li>
+<li>'cross-fertilization' 7<br /></li>
+<li>'far-reaching' 9<br /></li>
+<li>'it's-it's' 10<br /></li>
+<li>'1964' 13<br /></li>
+<li>'the-the' 14<br /></li>
+<li>'5th' 15<br /></li>
+<li>'15th' 16<br /></li>
+</ul>
+</blockquote>
+
+<p>72% of the sentences fail to produce phonetic transcription because of a single word missing in the dictionary model.</p>
+
+<p>However, it is not necessary because the dictionary is not complete/representative? enough.<br />
+Human pronunciation such a 'it's-it's', 'an-and', 'the-the' are colloquial duplication.</p>
+
+<p><strong>How can we fix this issue?</strong></p>
+</div>
+  <footer class="post-footer">
+    
+  </footer>
+  
+  
+  
+  
+</article>
+</main>
+<footer class="footer">
+  <span>&copy; 2019 J.Notebook 1.0</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Designed by <a href="http://21beats.com/" rel="noopener" target="_blank">️21beats️</a>️</span>
+</footer>
+<script src="https://joyyyjen.github.io/notebook-web/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="https://joyyyjen.github.io/notebook-web/js/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  addMenuListener();
+  InstantClick.on('change', function() {
+    addMenuListener();
+  });
+  function addMenuListener() {
+    var $toggle = document.querySelector('.menu-toggle');
+    var $body = document.querySelector('body');
+    $toggle.addEventListener('click', function() {
+      $body.classList.toggle('noscroll');
+    }, false);
+  }
+</script>
+</body>
+</html>
+

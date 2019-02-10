@@ -6,10 +6,36 @@
     <description>Recent content on J.Notebook 1.0</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Jan 2019 20:05:17 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Feb 2019 14:02:40 -0600</lastBuildDate>
     
 	<atom:link href="https://joyyyjen.github.io/notebook-web/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using G2p Seq2seq to Extend the Dictionary</title>
+      <link>https://joyyyjen.github.io/notebook-web/posts/using-g2p-seq2seq-to-extend-the-dictionary/</link>
+      <pubDate>Sun, 10 Feb 2019 14:02:40 -0600</pubDate>
+      
+      <guid>https://joyyyjen.github.io/notebook-web/posts/using-g2p-seq2seq-to-extend-the-dictionary/</guid>
+      <description>Introduction When we are adapting-acoustics-models, there are some utterances that fail to produce phonetic transcription.
+Those are words not in your model dictionary.
+Therefore, we would like to extend our dictionary.
+Using g2p-seq2seq to extend the dictionary To keep the consistency, we use CMUSphinx recommend g2p-seq2seq.
+Installation git clone the module from the following link:
+https://github.com/cmusphinx/g2p-seq2seq
+ sudo python setup.py install python setup.py test   Remember to update or install python setuptools.</description>
+    </item>
+    
+    <item>
+      <title>Transcription Text Preprocessing</title>
+      <link>https://joyyyjen.github.io/notebook-web/posts/transcription-text-preprocessing/</link>
+      <pubDate>Sat, 26 Jan 2019 16:29:38 -0600</pubDate>
+      
+      <guid>https://joyyyjen.github.io/notebook-web/posts/transcription-text-preprocessing/</guid>
+      <description>##Introduction
+There are two file formats for speech recognition training and analysis. If we have srt file for initial transcription file, we need to convert it to plain text format.
+We will cover how to srt to plain text in Section 1, then Section 2 discuss how to covert the plain text file we have from Section 1 to acceptable training format.</description>
+    </item>
     
     <item>
       <title>Note 2</title>
