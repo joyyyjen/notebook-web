@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>Word Error Rate Algorithm - J.Notebook 1.0</title>
+  
+  <meta name="description" content="WER Words error rate is a common metric of the performance of a speech recognition.
+The formula is WER = ( I &#43; D &#43; S) / N.
+Given an original text, a recognition text with a length of N words,
+ S: number of substitutions
+ D: number of deletions
+ I: number of insertions
+ N: total number of words
+ The WER is derived from the Levenshtein distance, working at the word level instead of the phoneme level.">
+  <meta name="author" content="">
+  
+  <link href="https://joyyyjen.github.io/notebook-web/css/font.css" rel="stylesheet">
+  <link href="https://joyyyjen.github.io/notebook-web/css/atom-one-dark.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+  <link href="https://joyyyjen.github.io/notebook-web/css/style.css" rel="stylesheet">
+  
+  <link rel="icon" href="https://joyyyjen.github.io/notebook-web/img/dp.png">
+  
+  <meta name="generator" content="Hugo 0.53" />
+  
+  <link rel="alternate" type="application/atom+xml" href="https://joyyyjen.github.io/notebook-web/index.xml" title="J.Notebook 1.0">
+  
+</head>
+<body class="single">
+  <header class="header">
+    
+    <p class="title"><a href="https://joyyyjen.github.io/notebook-web/">J.Notebook 1.0</a></p>
+    
+    <button class="menu-toggle" type="button"></button>
+    <nav class="menu">
+      <ul>
+        
+        
+      </ul>
+    </nav>
+  </header>
+  <main class="main">
+
+<article class="post post-view">
+  <header class="post-header">
+    <h1 class="post-title">Word Error Rate Algorithm</h1>
+    <p class="post-meta">2019.2.13</p>
+  </header>
+  <div class="post-content">
+
+<h2 id="wer">WER</h2>
+
+<p>Words error rate is a common metric of the performance of a speech recognition.</p>
+
+<p>The formula is WER = ( I + D + S) / N.</p>
+
+<p>Given an original text, a recognition text with a length of N words,</p>
+
+<ul>
+<li>S: number of substitutions<br /></li>
+<li>D: number of deletions<br /></li>
+<li>I: number of insertions<br /></li>
+
+<li><p>N: total number of words</p></li>
+
+<li><p>The WER is derived from the Levenshtein distance, working at the word level instead of the phoneme level.</p></li>
+</ul>
+
+<h3 id="levenshtein-distance">Levenshtein Distance</h3>
+
+<p>Levenshtein distance is used to calculate the minimum steps.<br />
+For instance, a reference string &quot;abcdef&quot; and a hypothsis string &quot;azced&quot; has three minimum difference steps.</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+<th>d</th>
+<th>e</th>
+<th>f</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>a</td>
+<td>1</td>
+<td><strong>0</strong></td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>z</td>
+<td>2</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td>c</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td><strong>1</strong></td>
+<td><strong>2</strong></td>
+<td>3</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>e</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td><strong>2</strong></td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>d</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td><strong>3</strong></td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>Substitute: d[i-1]d[j-1] + 1<br /></li>
+<li>insert: d[i]d[j-1] + 1 (up, down)<br /></li>
+<li>delete: d[i-1]d[j] + 1 (right, left)<br />
+<br /></li>
+</ul>
+
+<p>We can trace back the result from the bottom most right cell, as indicated by the bold numbers.</p>
+
+<p>f &rarr; d <br><br />
+d x <br><br />
+b &rarr; z</p>
+
+<h3 id="modification-in-wer-on-word-level">Modification in WER on word level</h3>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>their</th>
+<th>fresh</th>
+<th>new</th>
+<th>results</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>their</td>
+<td>1</td>
+<td><strong>0</strong></td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>first</td>
+<td>2</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>2</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>few</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td><strong>2</strong></td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>results</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td><strong>2</strong></td>
+</tr>
+</tbody>
+</table>
+
+<p>new &rarr; few <br><br />
+fresh &rarr; first</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>what</th>
+<th>extent</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td></td>
+<td><strong>0</strong></td>
+<td>1</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>what's</td>
+<td>1</td>
+<td><strong>1</strong></td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>the</td>
+<td>2</td>
+<td><strong>2</strong></td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>extent</td>
+<td>3</td>
+<td>3</td>
+<td><strong>2</strong></td>
+</tr>
+</tbody>
+</table>
+
+<p>reference: this youtube video has nice explanation :<br />
+<a href="https://www.youtube.com/watch?v=We3YDTzNXEk">https://www.youtube.com/watch?v=We3YDTzNXEk</a></p>
+
+<p>python code for WER and alignment:<br />
+<a href="https://github.com/zszyellow/WER-in-python">https://github.com/zszyellow/WER-in-python</a></p>
+</div>
+  <footer class="post-footer">
+    
+  </footer>
+  
+  
+  
+  
+</article>
+</main>
+<footer class="footer">
+  <span>&copy; 2019 J.Notebook 1.0</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Designed by <a href="http://21beats.com/" rel="noopener" target="_blank">️21beats️</a>️</span>
+</footer>
+<script src="https://joyyyjen.github.io/notebook-web/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="https://joyyyjen.github.io/notebook-web/js/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  addMenuListener();
+  InstantClick.on('change', function() {
+    addMenuListener();
+  });
+  function addMenuListener() {
+    var $toggle = document.querySelector('.menu-toggle');
+    var $body = document.querySelector('body');
+    $toggle.addEventListener('click', function() {
+      $body.classList.toggle('noscroll');
+    }, false);
+  }
+</script>
+</body>
+</html>
+

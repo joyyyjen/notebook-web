@@ -6,10 +6,49 @@
     <description>Recent content on J.Notebook 1.0</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Feb 2019 14:02:40 -0600</lastBuildDate>
+    <lastBuildDate>Wed, 13 Feb 2019 15:48:54 -0600</lastBuildDate>
     
 	<atom:link href="https://joyyyjen.github.io/notebook-web/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Error Repetition Hyphen</title>
+      <link>https://joyyyjen.github.io/notebook-web/posts/error-repetition-hyphen/</link>
+      <pubDate>Wed, 13 Feb 2019 15:48:54 -0600</pubDate>
+      
+      <guid>https://joyyyjen.github.io/notebook-web/posts/error-repetition-hyphen/</guid>
+      <description>Training Error Identified When I was training Astrom Audio, the following word are not in dictionary:
+  &#39;week-long&#39; 0
+ &#39;an-and&#39; 2
+ &#39;multi-disciplinary&#39; 3
+ &#39;valkenburg&#39; 4
+ &#39;ehht&#39; 5
+ &#39;creatives&#39;&#39; 6
+ &#39;cross-fertilization&#39; 7
+ &#39;far-reaching&#39; 9
+ &#39;it&#39;s-it&#39;s&#39; 10
+ &#39;1964&#39; 13
+ &#39;the-the&#39; 14
+ &#39;5th&#39; 15
+ &#39;15th&#39; 16
+   72% of the sentences fail to produce phonetic transcription because of a single word missing in the dictionary model.</description>
+    </item>
+    
+    <item>
+      <title>Word Error Rate Algorithm</title>
+      <link>https://joyyyjen.github.io/notebook-web/posts/wer/</link>
+      <pubDate>Wed, 13 Feb 2019 14:53:07 -0600</pubDate>
+      
+      <guid>https://joyyyjen.github.io/notebook-web/posts/wer/</guid>
+      <description>WER Words error rate is a common metric of the performance of a speech recognition.
+The formula is WER = ( I + D + S) / N.
+Given an original text, a recognition text with a length of N words,
+ S: number of substitutions
+ D: number of deletions
+ I: number of insertions
+ N: total number of words
+ The WER is derived from the Levenshtein distance, working at the word level instead of the phoneme level.</description>
+    </item>
     
     <item>
       <title>Using G2p Seq2seq to Extend the Dictionary</title>
