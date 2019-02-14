@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>Error Repetition Hyphen - J.Notebook 1.0</title>
+  
+  <meta name="description" content="Training Error Identified When I was training Astrom Audio, the following word are not in dictionary:
+  &#39;week-long&#39; 0
+ &#39;an-and&#39; 2
+ &#39;multi-disciplinary&#39; 3
+ &#39;valkenburg&#39; 4
+ &#39;ehht&#39; 5
+ &#39;creatives&#39;&#39; 6
+ &#39;cross-fertilization&#39; 7
+ &#39;far-reaching&#39; 9
+ &#39;it&#39;s-it&#39;s&#39; 10
+ &#39;1964&#39; 13
+ &#39;the-the&#39; 14
+ &#39;5th&#39; 15
+ &#39;15th&#39; 16
+   72% of the sentences fail to produce phonetic transcription because of a single word missing in the dictionary model.">
+  <meta name="author" content="">
+  
+  <link href="https://joyyyjen.github.io/notebook-web/css/font.css" rel="stylesheet">
+  <link href="https://joyyyjen.github.io/notebook-web/css/atom-one-dark.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+  <link href="https://joyyyjen.github.io/notebook-web/css/style.css" rel="stylesheet">
+  
+  <link rel="icon" href="https://joyyyjen.github.io/notebook-web/img/dp.png">
+  
+  <meta name="generator" content="Hugo 0.53" />
+  
+  <link rel="alternate" type="application/atom+xml" href="https://joyyyjen.github.io/notebook-web/index.xml" title="J.Notebook 1.0">
+  
+</head>
+<body class="single">
+  <header class="header">
+    
+    <p class="title"><a href="https://joyyyjen.github.io/notebook-web/">J.Notebook 1.0</a></p>
+    
+    <button class="menu-toggle" type="button"></button>
+    <nav class="menu">
+      <ul>
+        
+        
+      </ul>
+    </nav>
+  </header>
+  <main class="main">
+
+<article class="post post-view">
+  <header class="post-header">
+    <h1 class="post-title">Error Repetition Hyphen</h1>
+    <p class="post-meta">2019.2.13</p>
+  </header>
+  <div class="post-content">
+
+<h3 id="training-error-identified">Training Error Identified</h3>
+
+<p>When I was training Astrom Audio, the following word are not in dictionary:</p>
+
+<blockquote>
+<ul>
+<li>'week-long' 0<br /></li>
+<li>'an-and' 2<br /></li>
+<li>'multi-disciplinary' 3<br /></li>
+<li>'valkenburg' 4<br /></li>
+<li>'ehht' 5<br /></li>
+<li>'creatives'' 6<br /></li>
+<li>'cross-fertilization' 7<br /></li>
+<li>'far-reaching' 9<br /></li>
+<li>'it's-it's' 10<br /></li>
+<li>'1964' 13<br /></li>
+<li>'the-the' 14<br /></li>
+<li>'5th' 15<br /></li>
+<li>'15th' 16<br /></li>
+</ul>
+</blockquote>
+
+<p>72% of the sentences fail to produce phonetic transcription because of a single word missing in the dictionary model.</p>
+
+<p><strong>How can we fix this issue?</strong></p>
+
+<h3 id="repetition">Repetition</h3>
+
+<ul>
+<li>'an-and'<br /></li>
+<li>'it's-it's'<br /></li>
+<li>'the-the'<br />
+<br /></li>
+</ul>
+
+<p>In the speech to text process, do we want to output the colloquial duplication or the unintended repeat of the utterance?</p>
+
+<p>Repetition should be kept. When deaf people watching the video, we want to keep a consistent between facial/mouth shape and the text</p>
+
+<h3 id="number">Number</h3>
+
+<p>In our phonetic dictionary, we only have numbers in word form. It conflicts with our reference text.<br />
+Should we delete it from the error list? Or can we add the number into the phonetics dictionary?</p>
+
+<h3 id="hyphen">Hyphen (-)</h3>
+
+<p>The hyphen is used in compound words or to join prefixes to other words.<br />
+For instance, &quot;multi-disciplinary&quot;, &quot;well-being&quot; ... <br><br />
+In CMU English phonetic dictionary, some words like ad-hoc, air-force have a hyphen, while words like &quot;weeklong&quot;, &quot;multination&quot; do not have a hyphen.<br />
+Why is it the case?<br />
+One possible solution is to use collocation to update the dictionary with appropriate compound words.</p>
+
+<p>Reference:<br />
+<a href="https://pdfs.semanticscholar.org/d0a1/adf85ef5893b3a84fbb64cca951715e54299.pdf">Errors, Repetition, and Contrastive Emphasis in Speech Recognition</a><br />
+<a href="https://nlp.stanford.edu/fsnlp/promo/colloc.pdf">Collocations</a><br />
+<a href="https://en.oxforddictionaries.com/punctuation/hyphen#hyphens_in_compound_words">Hyphens</a></p>
+</div>
+  <footer class="post-footer">
+    
+  </footer>
+  
+  
+  
+  
+</article>
+</main>
+<footer class="footer">
+  <span>&copy; 2019 J.Notebook 1.0</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Designed by <a href="http://21beats.com/" rel="noopener" target="_blank">️21beats️</a>️</span>
+</footer>
+<script src="https://joyyyjen.github.io/notebook-web/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="https://joyyyjen.github.io/notebook-web/js/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  addMenuListener();
+  InstantClick.on('change', function() {
+    addMenuListener();
+  });
+  function addMenuListener() {
+    var $toggle = document.querySelector('.menu-toggle');
+    var $body = document.querySelector('body');
+    $toggle.addEventListener('click', function() {
+      $body.classList.toggle('noscroll');
+    }, false);
+  }
+</script>
+</body>
+</html>
+

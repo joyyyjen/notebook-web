@@ -34,6 +34,7 @@ When I was training Astrom Audio, the following word are not in dictionary:
 
 In the speech to text process, do we want to output the colloquial duplication or the unintended repeat of the utterance? 
 
+Repetition should be kept. When deaf people watching the video, we want to keep a consistent between facial/mouth shape and the text
 ### Number
 In our phonetic dictionary, we only have numbers in word form. It conflicts with our reference text.
 Should we delete it from the error list? Or can we add the number into the phonetics dictionary?
