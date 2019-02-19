@@ -4,8 +4,18 @@ themesDir = "themes"
 publishDir = "docs"
 title = "J.Notebook 1.0"
 theme = "hugo-paper"
+sectionPagesMenu = "main"
 
 [blackfriday]
   smartypants = false
   extensions = ["tables", "hardLineBreak", "fencedCode"]
   smartDashes = false
+
+
+
+[params]
+    description = "A minimal Hugo theme"
+    dateFormatToUse = "2006-01-02"
+    replaceGoogleFonts = "fonts.loli.net"
+    twitter = "example"
+    facebook = "example"
