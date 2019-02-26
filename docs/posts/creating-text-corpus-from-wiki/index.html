@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>Creating Text Corpus From Wiki - J.Notebook 1.0</title>
+  
+  <meta name="description" content="Speech Recognition consists of 3 main models:  Acoustic Model : acoustic properties for each senone (HMM)
+ Phonetic Dictionary: a mapping from words to phones
+ Language Model: to restrict word search
+What is the next words? 
+In spite __
+  In our application, we are working on Speech-to-Text Auto Captioning for Speeches in NCSA (The National Center for Supercomputing Applications ) Talks.
+Thus, most of the talks have more related to science fields.">
+  <meta name="author" content="">
+  
+  <link href="https://joyyyjen.github.io/notebook-web/css/font.css" rel="stylesheet">
+  <link href="https://joyyyjen.github.io/notebook-web/css/atom-one-dark.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+  <link href="https://joyyyjen.github.io/notebook-web/css/style.css" rel="stylesheet">
+  
+    <link rel="shortcut icon" href="https://joyyyjen.github.io/notebook-web/img/favicon.png" type="image/x-icon" />
+
+  
+  <meta name="generator" content="Hugo 0.53" />
+  
+  <link rel="alternate" type="application/atom+xml" href="https://joyyyjen.github.io/notebook-web/index.xml" title="J.Notebook 1.0">
+  
+</head>
+<body class="single">
+  <header class="header">
+    
+    <p class="title"><a href="https://joyyyjen.github.io/notebook-web/">J.Notebook 1.0</a></p>
+    
+    <button class="menu-toggle" type="button"></button>
+    <nav class="menu">
+      <ul>
+        
+        
+        <li class="">
+          <a href="/notebook-web/posts/">Posts</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </header>
+  <main class="main">
+
+<article class="post post-view">
+  <header class="post-header">
+    <h1 class="post-title">Creating Text Corpus From Wiki</h1>
+    <p class="post-meta">2019.2.26</p>
+  </header>
+  <div class="post-content">
+
+<h3 id="speech-recognition-consists-of-3-main-models">Speech Recognition consists of 3 main models:</h3>
+
+<ol>
+<li>Acoustic Model : acoustic properties for each senone (HMM)<br /></li>
+<li>Phonetic Dictionary: a mapping from words to phones<br /></li>
+<li>Language Model: to restrict word search<br />
+<li>What is the next words? </li><br />
+<ul>In spite __</ul><br />
+<br /></li>
+</ol>
+
+<p>In our application, we are working on Speech-to-Text Auto Captioning for Speeches in NCSA (The National Center for Supercomputing Applications ) Talks.<br />
+Thus, most of the talks have more related to science fields. The open source speech recognition CMUSphinx has a general models.<br />
+In this article, I will present how can we create domain-specific phonetics model.</p>
+
+<h3 id="step-1-get-the-wikipedia-database">Step 1: Get the Wikipedia Database</h3>
+
+<p>Wikipedia offers free copies of all available content to interested users. <br><br />
+ <a href="https://en.wikipedia.org/wiki/Wikipedia:Database_download#Help_to_parse_dumps_for_use_in_scripts">Wikipedia:Database download</a> lists all the possible tools, databases, and answers to the frequent asked questions.</p>
+
+<p>To download a subset of the database in XML format, such as a specific category or a list of article, we can use <a href="https://en.wikipedia.org/wiki/Special:Export">Special:Export</a>. Usage of which is described at<br />
+<a href="https://en.wikipedia.org/wiki/Help:Export">Wikipedia:Help:Export</a>.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Portal:Contents/Categories">Wikipedia:Portal:Contents/Categories</a> shows the categories of Wikipedia's content, such as &quot;Culture and the arts&quot;, &quot;Geography and places&quot;,&quot;Human activities&quot; and etc.</p>
+
+<p>The category I chose are: technology, science, computer, environment, policy, education.<br />
+Reference Screenshot:<br />
+<img src="https://raw.githubusercontent.com/joyyyjen/notebook-web/master/docs/img/export.png" alt="alt text" title="Wiki:Special:Export" /></p>
+
+<h3 id="step-2-convert-the-dump-file-to-sentences">Step 2: convert the dump file to sentences</h3>
+
+<p><a href="https://github.com/attardi/wikiextractor">WikiExtractor</a> is a Python script that extracts and cleans text from a Wikipedia database dump.<br />
+The tool is written in Python and requires Python 2.7 or Python 3.3+ but no additional library.</p>
+
+<h4 id="installation">Installation</h4>
+
+<pre><code>git clone https://github.com/attardi/wikiextractor.git
+(sudo) python setup.py install
+</code></pre>
+
+<h4 id="execution">Execution</h4>
+
+<pre><code>cd wikiextractor/
+python3 WikiExtractor.py -o ../Output.txt ../Wikipedia-20190222003910.xml 
+</code></pre>
+
+<p>System Output:<br />
+<img src="https://raw.githubusercontent.com/joyyyjen/notebook-web/master/docs/img/extractor.png" alt="alt text" title="wikietractor system output" /></p>
+
+<p>Output Result:<br />
+<img src="https://raw.githubusercontent.com/joyyyjen/notebook-web/master/docs/img/wiki00.png" alt="alt text" title="wikietractor output result" /></p>
+
+<p>The article is inspired by <a href="http://trulymadlywordly.blogspot.com/2011/03/creating-text-corpus-from-wikipedia.html">Creating a text corpus from Wikipedia</a></p>
+</div>
+  <footer class="post-footer">
+    
+  </footer>
+  
+  
+  
+  
+</article>
+</main>
+<footer class="footer">
+  <span>&copy; 2019 J.Notebook 1.0</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Designed by <a href="http://21beats.com/" rel="noopener" target="_blank">️21beats️</a>️</span>
+</footer>
+<script src="https://joyyyjen.github.io/notebook-web/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="https://joyyyjen.github.io/notebook-web/js/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  addMenuListener();
+  InstantClick.on('change', function() {
+    addMenuListener();
+  });
+  function addMenuListener() {
+    var $toggle = document.querySelector('.menu-toggle');
+    var $body = document.querySelector('body');
+    $toggle.addEventListener('click', function() {
+      $body.classList.toggle('noscroll');
+    }, false);
+  }
+</script>
+</body>
+</html>
+

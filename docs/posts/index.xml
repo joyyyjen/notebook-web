@@ -6,10 +6,25 @@
     <description>Recent content in Posts on J.Notebook 1.0</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Feb 2019 15:48:54 -0600</lastBuildDate>
+    <lastBuildDate>Tue, 26 Feb 2019 16:51:59 -0600</lastBuildDate>
     
 	<atom:link href="https://joyyyjen.github.io/notebook-web/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Creating Text Corpus From Wiki</title>
+      <link>https://joyyyjen.github.io/notebook-web/posts/creating-text-corpus-from-wiki/</link>
+      <pubDate>Tue, 26 Feb 2019 16:51:59 -0600</pubDate>
+      
+      <guid>https://joyyyjen.github.io/notebook-web/posts/creating-text-corpus-from-wiki/</guid>
+      <description>Speech Recognition consists of 3 main models:  Acoustic Model : acoustic properties for each senone (HMM)
+ Phonetic Dictionary: a mapping from words to phones
+ Language Model: to restrict word search
+What is the next words? 
+In spite __
+  In our application, we are working on Speech-to-Text Auto Captioning for Speeches in NCSA (The National Center for Supercomputing Applications ) Talks.
+Thus, most of the talks have more related to science fields.</description>
+    </item>
     
     <item>
       <title>Error Repetition Hyphen</title>

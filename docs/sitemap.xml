@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://joyyyjen.github.io/notebook-web/posts/creating-text-corpus-from-wiki/</loc>
+    <lastmod>2019-02-26T16:51:59-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://joyyyjen.github.io/notebook-web/posts/error-repetition-hyphen/</loc>
     <lastmod>2019-02-13T15:48:54-06:00</lastmod>
   </url>
@@ -49,13 +54,13 @@
   
   <url>
     <loc>https://joyyyjen.github.io/notebook-web/</loc>
-    <lastmod>2019-02-13T15:48:54-06:00</lastmod>
+    <lastmod>2019-02-26T16:51:59-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://joyyyjen.github.io/notebook-web/posts/</loc>
-    <lastmod>2019-02-13T15:48:54-06:00</lastmod>
+    <lastmod>2019-02-26T16:51:59-06:00</lastmod>
     <priority>0</priority>
   </url>
   
