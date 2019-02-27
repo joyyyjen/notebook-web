@@ -10,7 +10,7 @@
   <meta name="description" content="Speech Recognition consists of 3 main models:  Acoustic Model : acoustic properties for each senone (HMM)
  Phonetic Dictionary: a mapping from words to phones
  Language Model: to restrict word search
-What is the next words? 
+What is the next words?
 In spite __
   In our application, we are working on Speech-to-Text Auto Captioning for Speeches in NCSA (The National Center for Supercomputing Applications ) Talks.
 Thus, most of the talks have more related to science fields.">
@@ -61,8 +61,8 @@ Thus, most of the talks have more related to science fields.">
 <li>Acoustic Model : acoustic properties for each senone (HMM)<br /></li>
 <li>Phonetic Dictionary: a mapping from words to phones<br /></li>
 <li>Language Model: to restrict word search<br />
-<li>What is the next words? </li><br />
-<ul>In spite __</ul><br />
+<ul>What is the next words?<br />
+<ul>In spite __</ul></ul><br />
 <br /></li>
 </ol>
 
@@ -81,7 +81,7 @@ In this article, I will present how can we create domain-specific phonetics mode
 <p><a href="https://en.wikipedia.org/wiki/Portal:Contents/Categories">Wikipedia:Portal:Contents/Categories</a> shows the categories of Wikipedia's content, such as &quot;Culture and the arts&quot;, &quot;Geography and places&quot;,&quot;Human activities&quot; and etc.</p>
 
 <p>The category I chose are: technology, science, computer, environment, policy, education.<br />
-Reference Screenshot:<br />
+I added each category one by one and got the following namespaces.<br />
 <img src="https://raw.githubusercontent.com/joyyyjen/notebook-web/master/docs/img/export.png" alt="alt text" title="Wiki:Special:Export" /></p>
 
 <h3 id="step-2-convert-the-dump-file-to-sentences">Step 2: convert the dump file to sentences</h3>
@@ -107,7 +107,31 @@ python3 WikiExtractor.py -o ../Output.txt ../Wikipedia-20190222003910.xml
 <p>Output Result:<br />
 <img src="https://raw.githubusercontent.com/joyyyjen/notebook-web/master/docs/img/wiki00.png" alt="alt text" title="wikietractor output result" /></p>
 
+<p>To further clean the text and format it to our desired form, run the following bash command:</p>
+
+<pre><code>cat Output.txt | sed 's/&lt;.*&gt;//' | tr -d '\.\,&amp;' | tr ' ' '\n' | sed '/^[[:space:]]*$/d' | tr [[:upper:]] [[:lower:]] &gt; wiki_01.txt 
+</code></pre>
+
+<ul>
+<li><strong>sed 's/&lt;.*&gt;//'</strong> delete everything inside &quot;&lt;&gt;&quot;<br /></li>
+<li><strong>tr -d '.\,&amp;'</strong>  and <strong>sed '/<sup class="footnote-ref" id="fnref:space"><a href="#fn:space">1</a></sup>*$/d'</strong> delete empty string (I forgot why I repeat twice)<br /></li>
+<li><strong>tr ' ' '\n'</strong> translates space to newline<br /></li>
+<li><strong>tr [[:upper:]] [[:lower:]]</strong> translate upper case letter to lower case<br />
+<br />
+<br /></li>
+</ul>
+
+<p>More updates...</p>
+
 <p>The article is inspired by <a href="http://trulymadlywordly.blogspot.com/2011/03/creating-text-corpus-from-wikipedia.html">Creating a text corpus from Wikipedia</a></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:space">[:space:] <a class="footnote-return" href="#fnref:space"><sup>[return]</sup></a></li>
+</ol>
+</div>
 </div>
   <footer class="post-footer">
     

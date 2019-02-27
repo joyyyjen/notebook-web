@@ -6,10 +6,22 @@
     <description>Recent content in Posts on J.Notebook 1.0</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Feb 2019 16:51:59 -0600</lastBuildDate>
+    <lastBuildDate>Tue, 26 Feb 2019 21:19:51 -0600</lastBuildDate>
     
 	<atom:link href="https://joyyyjen.github.io/notebook-web/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sr Training Chart</title>
+      <link>https://joyyyjen.github.io/notebook-web/posts/sr-training-chart/</link>
+      <pubDate>Tue, 26 Feb 2019 21:19:51 -0600</pubDate>
+      
+      <guid>https://joyyyjen.github.io/notebook-web/posts/sr-training-chart/</guid>
+      <description>Training Set 50 audio format sentences from Ted
+18 audio format sentences from Astrom
+   Model Type Default Ted-HMM Astrom-HMM Ted+Astrom-HMM Ted+Astrom-HMM+g2p Ted+Astom-HMM+openslrG2P     Ted 33.1 15.8% - 19.2% 18% 16.8%   Astrom ? - ? 30% 27.8% 39.9%     Ted-HMM follows the adapting acoustics models step using Ted audio as training file
+ Ted+Astrom-HMM+g2p adapted the acoustics models and add extended dictionary according to words not in the first training session</description>
+    </item>
     
     <item>
       <title>Creating Text Corpus From Wiki</title>
@@ -20,7 +32,7 @@
       <description>Speech Recognition consists of 3 main models:  Acoustic Model : acoustic properties for each senone (HMM)
  Phonetic Dictionary: a mapping from words to phones
  Language Model: to restrict word search
-What is the next words? 
+What is the next words?
 In spite __
   In our application, we are working on Speech-to-Text Auto Captioning for Speeches in NCSA (The National Center for Supercomputing Applications ) Talks.
 Thus, most of the talks have more related to science fields.</description>

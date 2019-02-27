@@ -5,7 +5,6 @@ tags = []
 featured_image = "" 
 description = "" 
 +++
-
 ### Speech Recognition consists of 3 main models: 
 1. Acoustic Model : acoustic properties for each senone (HMM)
 2. Phonetic Dictionary: a mapping from words to phones
