@@ -10,8 +10,8 @@ description = ""
 1. Acoustic Model : acoustic properties for each senone (HMM)
 2. Phonetic Dictionary: a mapping from words to phones
 3. Language Model: to restrict word search
-<li>What is the next words? </li>
- <ul>In spite __</ul>
+<ul>What is the next words? 
+ <ul>In spite __</ul></ul>
  
 In our application, we are working on Speech-to-Text Auto Captioning for Speeches in NCSA (The National Center for Supercomputing Applications ) Talks.
 Thus, most of the talks have more related to science fields. The open source speech recognition CMUSphinx has a general models.
@@ -27,7 +27,7 @@ To download a subset of the database in XML format, such as a specific category 
 [Wikipedia:Portal:Contents/Categories](https://en.wikipedia.org/wiki/Portal:Contents/Categories) shows the categories of Wikipedia's content, such as "Culture and the arts", "Geography and places","Human activities" and etc. 
 
 The category I chose are: technology, science, computer, environment, policy, education.
-Reference Screenshot:
+I added each category one by one and got the following namespaces. 
 ![alt text][img1]
 [img1]: https://raw.githubusercontent.com/joyyyjen/notebook-web/master/docs/img/export.png "Wiki:Special:Export"
 
@@ -55,6 +55,18 @@ System Output:
 Output Result:
 ![alt text][img3]
 [img3]: https://raw.githubusercontent.com/joyyyjen/notebook-web/master/docs/img/wiki00.png "wikietractor output result"
+
+To further clean the text and format it to our desired form, run the following bash command:
+```
+cat Output.txt | sed 's/<.*>//' | tr -d '\.\,&' | tr ' ' '\n' | sed '/^[[:space:]]*$/d' | tr [[:upper:]] [[:lower:]] > wiki_01.txt 
+```
+- **sed 's/<.\*>//'** delete everything inside "<>"
+- **tr -d '\.\,&'**  and **sed '/^[[:space:]]\*$/d'** delete empty string (I forgot why I repeat twice)
+- **tr ' ' '\n'** translates space to newline
+- **tr [[:upper:]] [[:lower:]]** translate upper case letter to lower case
+
+
+More updates...
 
 The article is inspired by [Creating a text corpus from Wikipedia](http://trulymadlywordly.blogspot.com/2011/03/creating-text-corpus-from-wikipedia.html)
 

@@ -39,6 +39,70 @@ Repetition should be kept. When deaf people watching the video, we want to keep 
 In our phonetic dictionary, we only have numbers in word form. It conflicts with our reference text.
 Should we delete it from the error list? Or can we add the number into the phonetics dictionary?
 
+> I found another phonetics dictionary and it also print number in word forms. The reason we prefer number form is because the reading efficiency. 
+One way to solve it is by transferring all the word forms into numbers. The script I got is: 
+```
+def text2int (textnum, numwords={}):
+    if not numwords:
+        units = [
+        "zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
+        "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
+        "sixteen", "seventeen", "eighteen", "nineteen",
+        ]
+
+        tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+
+        scales = ["hundred", "thousand", "million", "billion", "trillion"]
+
+        #numwords["and"] = (1, 0)
+        for idx, word in enumerate(units):  numwords[word] = (1, idx)
+        for idx, word in enumerate(tens):       numwords[word] = (1, idx * 10)
+        for idx, word in enumerate(scales): numwords[word] = (10 ** (idx * 3 or 2), 0)
+
+    ordinal_words = {'first':1, 'second':2, 'third':3, 'fifth':5, 'eighth':8, 'ninth':9, 'twelfth':12}
+    ordinal_endings = [('ieth', 'y'), ('th', '')]
+
+    textnum = textnum.replace('-', ' ')
+
+    current = result = 0
+    curstring = ""
+    onnumber = False
+    for word in textnum.split():
+        if word in ordinal_words:
+            scale, increment = (1, ordinal_words[word])
+            current = current * scale + increment
+            if scale > 100:
+                result += current
+                current = 0
+            onnumber = True
+        else:
+            for ending, replacement in ordinal_endings:
+                if word.endswith(ending):
+                    word = "%s%s" % (word[:-len(ending)], replacement)
+
+            if word not in numwords:
+                if onnumber:
+                    curstring += repr(result + current) + " "
+                curstring += word + " "
+                result = current = 0
+                onnumber = False
+            else:
+                scale, increment = numwords[word]
+
+                current = current * scale + increment
+                if scale > 100:
+                    result += current
+                    current = 0
+                onnumber = True
+
+    if onnumber:
+        curstring += repr(result + current)
+
+    return curstring
+``` 
+Notice: 
+- We can also transfer number to words during training and convert it back. 
+
 ### Hyphen (-)
 The hyphen is used in compound words or to join prefixes to other words. 
 For instance, "multi-disciplinary", "well-being" ... <br>
