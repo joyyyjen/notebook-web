@@ -19,7 +19,7 @@
       <guid>https://joyyyjen.github.io/notebook-web/posts/sr-training-chart/</guid>
       <description>Training Set 50 audio format sentences from Ted
 18 audio format sentences from Astrom
-   Model Type Default Ted-HMM Astrom-HMM Ted+Astrom-HMM Ted+Astrom-HMM+g2p Ted+Astom-HMM+openslrG2P     Ted 33.1 15.8% - 19.2% 18% 16.8%   Astrom ? - ? 30% 27.8% 39.9%     Ted-HMM follows the adapting acoustics models step using Ted audio as training file
+   Model Type Default Ted-HMM Astrom-HMM (num) Ted+Astrom-HMM Ted+Astrom-HMM+g2p Ted+Astom-HMM+openslrG2P     Ted 33.1 15.8% - 19.2% 18% 16.8%   Astrom 44.9% - 41.4% (35.2%)        Ted-HMM follows the adapting acoustics models step using Ted audio as training file
  Ted+Astrom-HMM+g2p adapted the acoustics models and add extended dictionary according to words not in the first training session</description>
     </item>
     
@@ -98,9 +98,9 @@ https://github.com/cmusphinx/g2p-seq2seq
       <pubDate>Sat, 26 Jan 2019 16:29:38 -0600</pubDate>
       
       <guid>https://joyyyjen.github.io/notebook-web/posts/transcription-text-preprocessing/</guid>
-      <description>##Introduction
-There are two file formats for speech recognition training and analysis. If we have srt file for initial transcription file, we need to convert it to plain text format.
-We will cover how to srt to plain text in Section 1, then Section 2 discuss how to covert the plain text file we have from Section 1 to acceptable training format.</description>
+      <description>Introduction There are two file formats for speech recognition training and analysis. If we have srt file for initial transcription file, we need to convert it to plain text format.
+We will cover how to srt to plain text in Section 1, then Section 2 discuss how to covert the plain text file we have from Section 1 to acceptable training format.
+Section 1 - SRT to Plain Text A .</description>
     </item>
     
     <item>

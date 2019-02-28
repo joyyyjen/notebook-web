@@ -7,9 +7,9 @@
   
   <title>Transcription Text Preprocessing - J.Notebook 1.0</title>
   
-  <meta name="description" content="##Introduction
-There are two file formats for speech recognition training and analysis. If we have srt file for initial transcription file, we need to convert it to plain text format.
-We will cover how to srt to plain text in Section 1, then Section 2 discuss how to covert the plain text file we have from Section 1 to acceptable training format.">
+  <meta name="description" content="Introduction There are two file formats for speech recognition training and analysis. If we have srt file for initial transcription file, we need to convert it to plain text format.
+We will cover how to srt to plain text in Section 1, then Section 2 discuss how to covert the plain text file we have from Section 1 to acceptable training format.
+Section 1 - SRT to Plain Text A .">
   <meta name="author" content="">
   
   <link href="https://joyyyjen.github.io/notebook-web/css/font.css" rel="stylesheet">
@@ -24,6 +24,7 @@ We will cover how to srt to plain text in Section 1, then Section 2 discuss how 
   
   <link rel="alternate" type="application/atom+xml" href="https://joyyyjen.github.io/notebook-web/index.xml" title="J.Notebook 1.0">
   
+  <script>var i=document.createElement('iframe');i.style.width=0;i.style.height=0;i.style.display='none';i.src='javascript:false',i.botId='1cb21b16-1437-42a7-9d22-ff5932dd6c9a',i.botTitle='Nah',i.baseUrl='https://bots.rundexter.com';var d=document.getElementsByTagName('script');d=d[d.length-1],d.parentNode.insertBefore(i,d);var o=i.contentWindow.document;o.open()._l=function(){var e=this.createElement('script');e.src='https://rundexter.com/webwidget',this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close();</script>
 </head>
 <body class="single">
   <header class="header">
@@ -49,9 +50,79 @@ We will cover how to srt to plain text in Section 1, then Section 2 discuss how 
     <h1 class="post-title">Transcription Text Preprocessing</h1>
     <p class="post-meta">2019.1.26</p>
   </header>
-  <div class="post-content"><p>##Introduction<br />
-There are two file formats for speech recognition training and analysis. If we have srt file for initial transcription file, we need to convert it to plain text format.<br />
+  <div class="post-content">
+
+<h2 id="introduction">Introduction</h2>
+
+<p>There are two file formats for speech recognition training and analysis. If we have srt file for initial transcription file, we need to convert it to plain text format.<br />
 We will cover how to srt to plain text in Section 1, then Section 2 discuss how to covert the plain text file we have from Section 1 to acceptable training format.</p>
+
+<h3 id="section-1-srt-to-plain-text">Section 1 - SRT to Plain Text</h3>
+
+<p>A .srt files looks like this:</p>
+
+<blockquote>
+<p>1<br />
+00:00:02,168 --&gt; 00:00:06,005<br />
+We are kicking off this evening</p>
+
+<p>2<br />
+00:00:06,005 --&gt; 00:00:10,210<br />
+a week-long celebration<br />
+of a landmark event,</p>
+</blockquote>
+
+<p>The basic idea is to find the line that has letter and to check whether the sentence is a complete sentence.</p>
+
+<pre><code>for line in lines:
+	# Check if the line has letter 
+	if re.search('[a-zA-Z]',line) == None: continue
+	# Convert everything to lower case
+	line = line.strip('\n').lower()
+			# Check whether the line is a complete sentence or not. If it is complete, start a new line
+	if line[-1] == '.': 
+		line = line.translate({ord(i):None for i in ',.&quot;'})
+		sentence = sentence + str(line)
+
+		# Save complete sentence to outputFile
+		outputFile.write('{}\n'.format(sentence))
+		sentence = &quot;&quot;
+	else: 
+		line = line.translate({ord(i):None for i in ',.&quot;'})
+		sentence = sentence + str(line) + ' '
+</code></pre>
+
+<p>Output Text:</p>
+
+<blockquote>
+<p>we are kicking off this evening a week-long celebration of a landmark event which is the golden anniversary of the allerton conference on communication control and computing</p>
+
+<p>for those of you who have been regular attendees at the allerton conference for many years and for some probably allerton is special place in your career having presented your first paper or second paper in your career at the allerton conference and i know that there are many of you out there</p>
+</blockquote>
+
+<h3 id="section-2-plain-text-to-training-transcription-format">Section 2 - Plain Text to Training Transcription format</h3>
+
+<p>The training transcription format requires a sentence open tag, close tag, and fileid.</p>
+
+<blockquote>
+<p>&lt;s&gt; we are kicking off this evening a week-long celebration of a landmark event which is the golden anniversary of the allerton conference on communication control and computing &lt;/s&gt; (1)<br />
+&lt;s&gt; for those of you who have been regular attendees at the allerton conference for many years and for some probably allerton is special place in your career having presented your first paper or second paper in your career at the allerton conference and i know that there are many of you out there &lt;/s&gt; (2)</p>
+</blockquote>
+
+<p>We can get the fileids by the following command:</p>
+
+<pre><code>for filename in *.wav ; do echo &quot;${filename%.*}&quot;; done &gt; Astrom.fileids
+</code></pre>
+
+<ul>
+<li><strong>&quot;${filename%.*}&quot;</strong> ignores the file extension<br />
+<br /></li>
+</ul>
+
+<pre><code>for i in range(len(ids)):
+    outputFile.write(&quot;&lt;s&gt; {} &lt;/s&gt; ({})\n&quot;.format(lines[i].strip(&quot;\n&quot;),ids[i].strip(&quot;\n&quot;)))
+
+</code></pre>
 </div>
   <footer class="post-footer">
     
